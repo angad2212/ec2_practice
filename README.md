@@ -79,7 +79,7 @@ docker pull <your-dockerhub-username>/my-node-app
 Run the Docker Container on EC2:
 ```
 
-### 3.Now, run the container:
+### 3. Now, run the container:
 
 ```bash
 docker run -p 80:3000 <your-dockerhub-username>/my-node-app
