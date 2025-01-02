@@ -50,11 +50,41 @@ node index.js
 ```
 
 Your app should now be running on your EC2 instance and accessible through the public IP address of the EC2 instance.
+[Link Text](<your-instanc-public-ip>:port/todos)
 
+Ideally, instead of installing dependencies directly, you would dockerize your app. To do so, follow these steps:
 
+### 1. After connecting to ssh server, install docker on ec2:
+```bash
+# Update the package database
+sudo yum update -y
 
+# Install Docker
+sudo yum install docker -y
 
+# Start Docker service
+sudo service docker start
 
+# Add EC2 user to the Docker group
+sudo usermod -a -G docker ec2-user
+
+# Log out and log back in to apply the group changes
+exit
+```
+### 2. Pull the Docker Image from Docker Hub:
+Once Docker is installed on your EC2 instance, pull the Docker image from Docker Hub:
+
+```bash
+docker pull <your-dockerhub-username>/my-node-app
+Run the Docker Container on EC2:
+```
+
+### 3.Now, run the container:
+
+```bash
+docker run -p 80:3000 <your-dockerhub-username>/my-node-app
+This binds port 3000 of the container to port 80 on your EC2 instance. You can access your app by visiting the public IP address of the EC2 instance in the browser.
+```
 
 
 
