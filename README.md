@@ -50,7 +50,7 @@ node index.js
 ```
 
 Your app should now be running on your EC2 instance and accessible through the public IP address of the EC2 instance.
-[Link Text](<your-instanc-public-ip>:port/todos)
+[Link Text](http://<your-instance-public-ip>:8080/todos)
 
 Ideally, instead of installing dependencies directly, you would dockerize your app. To do so, follow these steps:
 
